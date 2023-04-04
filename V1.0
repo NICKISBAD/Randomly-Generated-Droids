@@ -20,7 +20,7 @@ rgd:Seperator()
 
 rgd:Button("GOD MODE", function()
 	while wait() do
-		for i,v in pairs(game.Workspace.Room:GetDescendants()) do
+		for i,v in pairs(game.Workspace.Room.Enemies:GetDescendants()) do
 if v:IsA("TouchTransmitter") then
 v:Destroy()
          end
