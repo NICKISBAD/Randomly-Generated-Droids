@@ -6,6 +6,20 @@ local serv = win:Server("RGD", "")
 
 local rgd = serv:Channel("Droid/Circuits")
 
+local Frame = game.CoreGui.Discord.MainFrame
+
+function onKeyPress(inputObject, gameProcessedEvent)
+	if inputObject.KeyCode == Enum.KeyCode.RightControl then
+		if Frame.Visible == false then
+			Frame.Visible = true
+		else
+			Frame.Visible = false
+		end
+	end
+end
+
+game:GetService("UserInputService").InputBegan:connect(onKeyPress)
+
 rgd:Button("Kill all Droids", function()
 	while wait() do
 		for i,v in pairs(game.Workspace.Room.Enemies:GetDescendants()) do
