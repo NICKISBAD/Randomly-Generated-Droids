@@ -6,19 +6,7 @@ local serv = win:Server("RGD", "")
 
 local rgd = serv:Channel("Droid/Circuits")
 
-local Frame = game.CoreGui.Discord.MainFrame
 
-function onKeyPress(inputObject, gameProcessedEvent)
-	if inputObject.KeyCode == Enum.KeyCode.RightControl then
-		if Frame.Visible == false then
-			Frame.Visible = true
-		else
-			Frame.Visible = false
-		end
-	end
-end
-
-game:GetService("UserInputService").InputBegan:connect(onKeyPress)
 
 local function notif(Head, Sub, Tm)
 game.StarterGui:SetCore("SendNotification", {
@@ -251,3 +239,17 @@ end)
 rgd:Label("You must have the Copper Sword in your inventory")
 rgd:Label("Unequipped, IF you re-equip it after enabling it")
 rgd:Label("You will be flung")
+
+local Frame = game.CoreGui.Discord.MainFrame
+
+function onKeyPress(inputObject, gameProcessedEvent)
+	if inputObject.KeyCode == Enum.KeyCode.RightControl then
+		if Frame.Visible == false then
+			Frame.Visible = true
+		else
+			Frame.Visible = false
+		end
+	end
+end
+
+game:GetService("UserInputService").InputBegan:connect(onKeyPress)
