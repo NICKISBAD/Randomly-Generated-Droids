@@ -20,6 +20,16 @@ end
 
 game:GetService("UserInputService").InputBegan:connect(onKeyPress)
 
+local function notif(Head, Sub, Tm)
+game.StarterGui:SetCore("SendNotification", {
+Title = Head;
+Text = Sub;
+Duration = Tm;
+})
+end
+
+notif("Loaded!", "Made by NICKISBAD on github", 5)
+
 rgd:Button("Kill all Droids", function()
 	while wait() do
 		for i,v in pairs(game.Workspace.Room.Enemies:GetDescendants()) do
