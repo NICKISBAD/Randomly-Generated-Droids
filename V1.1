@@ -1,3 +1,4 @@
+
 local DiscordLib = loadstring(game:HttpGet"https://raw.githubusercontent.com/dawid-scripts/UI-Libs/main/discord%20lib.txt")()
 
 local win = DiscordLib:Window("Nick's Awesome RGD Gui")
@@ -18,17 +19,19 @@ end)
 
 rgd:Seperator()
 
-rgd:Button("GOD MODE", function()
+rgd:Toggle("God Mode",true, function(bool)
 local plrc = game.Players.LocalPlayer.Character
 
-plrc.Head.CanTouch = false
-plrc.HumanoidRootPart.CanTouch = false
-plrc["Left Arm"].CanTouch = false
-plrc["Right Arm"].CanTouch = false
-plrc["Right Leg"].CanTouch = false
-plrc["Left Leg"].CanTouch = false
-plrc.Torso.CanTouch = false
+plrc.Head.CanTouch = bool
+plrc.HumanoidRootPart.CanTouch = bool
+plrc["Left Arm"].CanTouch = bool
+plrc["Right Arm"].CanTouch = bool
+plrc["Right Leg"].CanTouch = bool
+plrc["Left Leg"].CanTouch = bool
+plrc.Torso.CanTouch = bool
 end)
+
+rgd:Label("Green = off, Grey = On")
 
 rgd:Seperator()
 
