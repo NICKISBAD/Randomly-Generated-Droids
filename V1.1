@@ -40,18 +40,6 @@ rgd:Toggle("Auto Room", false, function(v)
     _G.AutoRoom = v
 end)
 
-spawn(function()
-   while wait() do
-      if _G.AutoRoom then   
-         for i,v in pairs(game.Workspace.Room.Enemies:GetDescendants()) do
-	   if v.Name == "HumanoidRootPart" then
-    v.Parent.Humanoid.WalkSpeed = 0
-    v.CFrame = game.Players.LocalPlayer.Character.HumanoiRootPart.CFrame * CFrame.new(0,0,-7)
-    end
-    end
-  end
-end)
-
 rgd:Button("Tornado Droid God Mode", function()
 	while wait() do
 		for i,v in pairs(game.Workspace:GetDescendants()) do
@@ -66,6 +54,7 @@ end)
 rgd:Seperator()
 
 rgd:Button("Ranged Droids God Mode", function()
+spawn(function()
 	while wait() do
 		for i,v in pairs(game.Workspace:GetDescendants()) do
 if v.Name == "Bullet" then
@@ -74,6 +63,7 @@ v.TouchInterest:Destroy()
          end
      end
   end
+end)
 end)
 
 rgd:Seperator()
