@@ -80,7 +80,7 @@ rgd:Seperator()
 
 rgd:Button("Snowball God Mode", function()
 	while wait() do
-		for i,v in pairs(game.Workspace:GetDescendants()) do
+		for i,v in pairs(game.Workspace:GetChildren()) do
 if v.Name == "Snowball" then
 v.TouchInterest:Destroy()
 
@@ -267,7 +267,9 @@ game.Players.LocalPlayer.Character.Humanoid.JumpPower = (t)
 end)
 
 rgd:Button("HitBox+ (Laggy)", function()
-game:GetService("Players").LocalPlayer.Backpack["Copper Sword"].Handle.Size = Vector3.new(999,999,999)
+game:GetService("Players").LocalPlayer.Backpack["Copper Sword"].Handle.Size = Vector3.new(60,60,60)
+
+
 end)
 
 rgd:Button("Undo HitBox+", function()
