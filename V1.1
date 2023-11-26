@@ -34,6 +34,19 @@ rgd:Label("Green = off, Grey = On")
 
 rgd:Seperator()
 
+_G.AutoRoom = false
+
+rgd:Toggle("Auto Room", false, function(v)
+    _G.AutoRoom = v
+end)
+
+spawn(function()
+   while wait() do
+      if _G.AutoRoom then         game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Workspace.Room.Floor.CFrame * CFrame.new(0,10,0)
+	 end
+  end
+end)
+
 rgd:Button("Tornado Droid God Mode", function()
 	while wait() do
 		for i,v in pairs(game.Workspace:GetDescendants()) do
