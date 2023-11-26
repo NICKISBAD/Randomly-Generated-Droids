@@ -43,6 +43,9 @@ end)
 spawn(function()
    while wait() do
       if _G.AutoRoom then         game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Workspace.Room.Floor.CFrame * CFrame.new(0,10,0)
+      game.Players.LocalPlayer.Character.HumanoidRootPart.Anchored = true
+      else
+      game.Players.LocalPlayer.Character.HumanoidRootPart.Anchored = false
 	 end
   end
 end)
