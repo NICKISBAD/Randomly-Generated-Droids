@@ -42,11 +42,13 @@ end)
 
 spawn(function()
    while wait() do
-      if _G.AutoRoom then         game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Workspace.Room.Floor.CFrame * CFrame.new(0,10,0)
-      game.Players.LocalPlayer.Character.HumanoidRootPart.Anchored = true
-      else
-      game.Players.LocalPlayer.Character.HumanoidRootPart.Anchored = false
-	 end
+      if _G.AutoRoom then   
+         for i,v in pairs(game.Workspace.Room.Enemies:GetDescendants()) do
+	   if v.Name == "HumanoidRootPart" then
+    v.Parent.Humanoid.WalkSpeed = 0
+    v.CFrame = game.Players.LocalPlayer.Character.HumanoiRootPart.CFrame * CFrame.new(0,0,-7)
+    end
+    end
   end
 end)
 
